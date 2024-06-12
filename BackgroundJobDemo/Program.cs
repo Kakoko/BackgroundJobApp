@@ -19,4 +19,10 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 
+app.MapGet("/messages", (SampleData data) =>
+{
+    return data.Data.Order();
+});
+
+
 app.Run();
