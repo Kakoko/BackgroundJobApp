@@ -1,7 +1,11 @@
+using BackgroundJobDemo;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddSingleton<SampleData>();
+builder.Services.AddHostedService<BackgroundRefresh>();
 
 var app = builder.Build();
 
